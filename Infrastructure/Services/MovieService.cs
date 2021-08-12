@@ -27,5 +27,6 @@ namespace Infrastructure.Services
             };
             return movies;
         }
+        // public getdetails() {}
     }
 }

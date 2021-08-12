@@ -1,4 +1,5 @@
-﻿using Infrastructure.Services;
+﻿using ApplicationCore.ServiceInterfaces;
+using Infrastructure.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MovieShopMVC.Models;
@@ -12,15 +13,16 @@ namespace MovieShopMVC.Controllers
 {
     public class HomeController : Controller
     {
-        private MovieService _movieService;
+        private IMovieService _movieService;
 
-        public HomeController()
+        public HomeController(IMovieService movieService)
         {
-            _movieService = new MovieService();
+            _movieService = movieService;
         }
 
         public IActionResult Index()
         {
+            
             var movies = _movieService.GetTopRevenueMovies();
             // 2 ways to pass data from controller to view
             // 1 Strongly Typed Models

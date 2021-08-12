@@ -10,3 +10,15 @@ F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Day17\MovieShop\Applica
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Day17\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.dll
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Day17\MovieShop\ApplicationCore\obj\Debug\net5.0\ref\ApplicationCore.dll
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Day17\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.pdb
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\ApplicationCore\bin\Debug\net5.0\ApplicationCore.deps.json
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\ApplicationCore\bin\Debug\net5.0\ApplicationCore.dll
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\ApplicationCore\bin\Debug\net5.0\ref\ApplicationCore.dll
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\ApplicationCore\bin\Debug\net5.0\ApplicationCore.pdb
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.csproj.AssemblyReference.cache
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.AssemblyInfoInputs.cache
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.AssemblyInfo.cs
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.csproj.CoreCompileInputs.cache
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.dll
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\ApplicationCore\obj\Debug\net5.0\ref\ApplicationCore.dll
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.pdb

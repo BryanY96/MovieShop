@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Laptop_files\\My stuff\\求职\\Antra_FullStack_Training\\Day17\\MovieShop\\ApplicationCore\\ApplicationCore.csproj",
+      "projectUniqueName": "F:\\Laptop_files\\My stuff\\求职\\Antra_FullStack_Training\\Project\\MovieShop\\ApplicationCore\\ApplicationCore.csproj",
       "projectName": "ApplicationCore",
-      "projectPath": "F:\\Laptop_files\\My stuff\\求职\\Antra_FullStack_Training\\Day17\\MovieShop\\ApplicationCore\\ApplicationCore.csproj",
+      "projectPath": "F:\\Laptop_files\\My stuff\\求职\\Antra_FullStack_Training\\Project\\MovieShop\\ApplicationCore\\ApplicationCore.csproj",
       "packagesPath": "C:\\Users\\mamba\\.nuget\\packages\\",
-      "outputPath": "F:\\Laptop_files\\My stuff\\求职\\Antra_FullStack_Training\\Day17\\MovieShop\\ApplicationCore\\obj\\",
+      "outputPath": "F:\\Laptop_files\\My stuff\\求职\\Antra_FullStack_Training\\Project\\MovieShop\\ApplicationCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mamba\\AppData\\Roaming\\NuGet\\NuGet.Config",
