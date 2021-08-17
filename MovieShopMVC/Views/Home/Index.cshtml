@@ -4,21 +4,16 @@
     ViewData["Title"] = "Home Page";
 }
 
-<h1>
-    @ViewBag.PageTitle
-</h1>
-<h3>
-    Total Top Movie: @ViewData["TotalMovies"]
-</h3>
+<div class="rounded">
+    <div class="container-fluid bg-light">
+        <div class="row">
 
-<div>
-    <ul>
-        @foreach (var movie in Model)
-        {
-            <li>
-                @movie.Id <br />
-                @movie.Title
-            </li>
-        }
-    </ul>
+            @foreach (var movie in Model)
+            {
+                <div class="col-12 col-lg-3 col-sm-4 col-xl-2"> <!-- the first one (col-6) by default is for the smallest screen size-->
+                    @await Html.PartialAsync("_MovieCard", movie); 
+                </div>
+            }
+        </div>
+    </div>
 </div>

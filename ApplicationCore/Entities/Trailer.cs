@@ -13,10 +13,10 @@ namespace ApplicationCore.Entities
         public string TrailerUrl { get; set; }
         public string Name { get; set; }
 
-        // Foreign Key
+        // Foreign Key -- divide the property (MovieId) into two parts: Movie & Id
         public int MovieId { get; set; }
 
-        // Navigation Property
+        // Navigation Property -- Like a join table
         public Movie Movie { get; set; }
 
     }

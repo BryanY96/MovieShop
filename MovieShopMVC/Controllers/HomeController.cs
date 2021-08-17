@@ -20,10 +20,12 @@ namespace MovieShopMVC.Controllers
             _movieService = movieService;
         }
 
-        public IActionResult Index()
+
+        public async Task<IActionResult> Index()
         {
             
-            var movies = _movieService.GetTopRevenueMovies();
+            var movieCards = await _movieService.GetTopRevenueMovies();
+            return View(movieCards);
             // 2 ways to pass data from controller to view
             // 1 Strongly Typed Models
             // 2 ViewBag
@@ -31,11 +33,11 @@ namespace MovieShopMVC.Controllers
             // get top revenue movies and display on the view
             // localhost:5001/movies/details/2
 
-            ViewBag.PageTitle = "Top Revenue Movie";  // ViewBag is a dynamic method (not strongly typed models)
-            ViewData["TotalMovies"] = movies.Count();
+            //ViewBag.PageTitle = "Top Revenue Movie";  // ViewBag is a dynamic method (not strongly typed models)
+            //ViewData["TotalMovies"] = movies.Count();
 
 
-            return View(movies);
+            //return View(movies);
         }
 
         public IActionResult Privacy()

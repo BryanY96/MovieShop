@@ -8,9 +8,4 @@
     <None Remove="Models\MovieCardResponseModel.cs~RF478d8eec.TMP" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Exceptions\" />
-    <Folder Include="RepositoryInterfaces\" />
-  </ItemGroup>
-
 </Project>

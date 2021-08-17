@@ -8,7 +8,9 @@ namespace ApplicationCore.Entities
 {
     public class MovieCast
     {
+        // foreign key
         public int MovieId { get; set; }
+        // foreign key
         public int CastId { get; set; }
         public string Character { get; set; }
 

@@ -14,7 +14,6 @@ F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\Appli
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\ApplicationCore\bin\Debug\net5.0\ApplicationCore.dll
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\ApplicationCore\bin\Debug\net5.0\ref\ApplicationCore.dll
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\ApplicationCore\bin\Debug\net5.0\ApplicationCore.pdb
-F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.csproj.AssemblyReference.cache
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.AssemblyInfoInputs.cache
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.AssemblyInfo.cs
@@ -22,3 +21,4 @@ F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\Appli
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.dll
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\ApplicationCore\obj\Debug\net5.0\ref\ApplicationCore.dll
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.pdb
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\ApplicationCore\obj\Debug\net5.0\ApplicationCore.csproj.AssemblyReference.cache

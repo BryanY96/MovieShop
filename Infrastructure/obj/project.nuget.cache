@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "TevIAB0HFklaPzmn5r1gxSgwCDgLHkyUyIiHPjlGpSSLrUCPGP8f/kKohGeF0ELsVO0JBrdbLVsnHbcTCaPN6g==",
+  "dgSpecHash": "t4XXyltxuBMf/oq9ZnSqJitVURg4yqkh1dXL4GEu4wHgpxuzVK1ZMbrS7SPjHMnNLDXSgu8nPsGXnJEMJkXK5Q==",
   "success": true,
   "projectFilePath": "F:\\Laptop_files\\My stuff\\求职\\Antra_FullStack_Training\\Project\\MovieShop\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\mamba\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.7\\microsoft.aspnetcore.cryptography.internal.5.0.7.nupkg.sha512",
+    "C:\\Users\\mamba\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.7\\microsoft.aspnetcore.cryptography.keyderivation.5.0.7.nupkg.sha512",
     "C:\\Users\\mamba\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\mamba\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\mamba\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",
