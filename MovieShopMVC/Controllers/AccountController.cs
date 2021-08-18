@@ -5,6 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using ApplicationCore.Models;
 using ApplicationCore.ServiceInterfaces;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 
 namespace MovieShopMVC.Controllers
 {
@@ -25,6 +28,8 @@ namespace MovieShopMVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginRequestModel model)
         {
+            // Cookie-based Authentication
+            //
             if (!ModelState.IsValid)
             {
                 return View();
@@ -34,10 +39,34 @@ namespace MovieShopMVC.Controllers
 
             if (user == null)
             {
-                throw new Exception("Invalid Login");
+                return View();
+                //throw new Exception("Invalid Login");
             }
 
+            // store some information in the Cookies, Authentication cookie.. Claims
+            // 
+            var claims = new List<Claim>
+            {
+                new Claim(type:ClaimTypes.Email, value:user.Email),
+                new Claim(ClaimTypes.GivenName, user.FirstName),
+                new Claim(ClaimTypes.Surname, user.LastName),
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
+            };
+            // Identity class .. and Principle
+            // go to an bar => check your identity => Driver License
+            // go to Airport => check passport
+            // Create a movie => claim with role value as Admin
+
+            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+            // create the cookies
+            // HttpContext
+
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
+
             // Cookies based authentication ....
+
+            //return View();
             return LocalRedirect("~/");
         }
 

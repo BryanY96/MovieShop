@@ -198,3 +198,4 @@ F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\Movie
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\obj\Debug\net5.0\MovieShopMVC.pdb
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\obj\Debug\net5.0\MovieShopMVC.genruntimeconfig.cache
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Cast\Details.cshtml.g.cs

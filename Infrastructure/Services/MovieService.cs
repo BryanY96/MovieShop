@@ -33,6 +33,7 @@ namespace Infrastructure.Services
                 TmdbUrl = movie.TmdbUrl,
                 PosterUrl = movie.PosterUrl,
                 BackdropUrl = movie.BackdropUrl,
+                Overview = movie.Overview,
                 OriginalLanguage = movie.OriginalLanguage,
                 ReleaseDate = movie.ReleaseDate,
                 RunTime = movie.RunTime,
@@ -48,6 +49,7 @@ namespace Infrastructure.Services
                     Id = cast.CastId, 
                     Name = cast.Cast.Name, 
                     Character = cast.Character,
+                    TmdbUrl = cast.Cast.TmdbUrl,
                     Gender = cast.Cast.Gender,
                     ProfilePath = cast.Cast.ProfilePath
                 });
@@ -79,7 +81,6 @@ namespace Infrastructure.Services
                 movieCards.Add(new MovieCardResponseModel { Id = movie.Id, Title = movie.Title, PosterUrl = movie.PosterUrl });
             }
             return movieCards; // we need to return models
-
         }
         // public getdetails() {}
     }

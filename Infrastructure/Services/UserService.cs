@@ -21,7 +21,12 @@ namespace Infrastructure.Services
         {
             _userRepository = userRepository;
         }
-        
+
+        public Task<IEnumerable<MovieCardResponseModel>> GetPuchasedMovies(int userId)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<UserLoginResponseModel> Login(LoginRequestModel model)
         {
             var dbUser = await _userRepository.GetUserByEmail(model.Email);

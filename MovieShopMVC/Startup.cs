@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ApplicationCore.RepositoryInterfaces;
 using Infrastructure.Repositories;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace MovieShopMVC
 {
@@ -34,6 +35,8 @@ namespace MovieShopMVC
             services.AddScoped<IMovieRepository, MovieRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ICastService, CastService>();
+            services.AddScoped<ICastRepository, CastRepository>();
 
 
 
@@ -41,6 +44,16 @@ namespace MovieShopMVC
                 (
                 options => options.UseSqlServer(Configuration.GetConnectionString("MovieShopDbConnection"))
                 );
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.Cookie.Name = "MovieShopAuthCookie";
+                    options.ExpireTimeSpan = TimeSpan.FromHours(2); // last for 2 hours from the moment cookies are generated
+                    options.LoginPath = "/Account/Login";
+                });
+
+            services.AddHttpContextAccessor();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,7 +73,7 @@ namespace MovieShopMVC
             app.UseStaticFiles();
 
             app.UseRouting();
-            //app.UseAuthentication();
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

@@ -1,3 +1,78 @@
-﻿<h1>
-    Movie Details
-</h1>
+﻿@model ApplicationCore.Models.MovieDetailsResponseModel
+
+    <div class="container-fluid">
+        <div class="row bg-dark" style="max-height:40%">
+            <div class="col-5">
+                <img src="@Model.PosterUrl" class="mx-auto" alt="@Model.Title"/>
+                <div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">MOVIE FACTS</li>
+                        <li class="list-group-item">Release Date <span class="badge badge-pill badge-dark">@Model.ReleaseDate</span> </li>
+                        <li class="list-group-item">Run Time <span class="badge badge-pill badge-dark">@Model.RunTime m</span> </li>
+                        <li class="list-group-item">Box Office <span class="badge badge-pill badge-dark">$ @Model.Revenue</span> </li>
+                        <li class="list-group-item">Budget <span class="badge badge-pill badge-dark">$ @Model.Budget</span> </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-4 text-left">
+                <div>
+                    <h1 style="color:white">@Model.Title</h1>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p style="color:grey">
+                            @Model.Tagline
+                        </p>
+                        <p style="color:grey">
+                            <b>@Model.RunTime m | @Model.ReleaseDate</b>
+                        </p>
+                    </div>
+                    <div class="col">
+                        @foreach (var genre in Model.Genres)
+                        {
+                            <a href="#" class="badge badge-pill badge-secondary">
+                                @genre.Name @*<p style="color:white">@genre.Name</p>*@
+                            </a>
+                        }
+
+                    </div>
+                </div>
+                <div>
+                    <span class="badge badge-warning">@Model.Rating</span>
+                </div>
+                <div>
+                    <p style="color:white">
+                        @Model.Overview
+                    </p>
+                </div>
+                <div>
+                    <ul class="col list-group list-group-flush">
+
+                        <li class="list-group-item"> <b>CAST</b> </li>
+                        @foreach (var cast in Model.Casts)
+                        {
+                            <li class="list-group-item">
+                                <a asp-controller="Cast" asp-action="Details" asp-route-id="@cast.Id"><img src="@cast.ProfilePath" class="rounded-circle" style="max-width:10%" alt="@cast.Name" /></a>
+                                @cast.Name
+                                @cast.Character
+                            </li>
+                        }
+                    </ul>
+
+                </div>
+            </div>
+            <div class="col-3">
+                <hr />
+                <button type="button" class="btn btn-outline-primary container-fluid">REVIEW</button>
+                <hr />
+                <button type="button" class="btn btn-outline-primary container-fluid">TRAILER</button>
+                <hr />
+                <button class="btn btn-light container-fluid mb-1" type="submit">BUY @Model.Price</button>
+                <button class="btn btn-light container-fluid mt-1" type="submit">WATCH MOVIE</button>
+                <hr />
+
+            </div>
+        </div>
+
+    </div>
