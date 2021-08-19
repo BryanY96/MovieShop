@@ -1,1 +1,10 @@
-﻿
+﻿@model List<ApplicationCore.Models.MovieCardResponseModel>
+
+    <h2>Favorite Movies</h2>
+    <br />
+    <div>
+        @foreach (var movie in Model)
+        {
+            @await Html.PartialAsync("_MovieCard", movie)
+        }
+    </div>
