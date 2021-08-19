@@ -48,9 +48,9 @@ namespace MovieShopMVC.Controllers
             var claims = new List<Claim>
             {
                 new Claim(type:ClaimTypes.Email, value:user.Email),
-                new Claim(ClaimTypes.GivenName, user.FirstName),
-                new Claim(ClaimTypes.Surname, user.LastName),
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
+                new Claim(type:ClaimTypes.GivenName, value:user.FirstName),
+                new Claim(type:ClaimTypes.Surname, value:user.LastName),
+                new Claim(type:ClaimTypes.NameIdentifier, value:user.Id.ToString())
             };
             // Identity class .. and Principle
             // go to an bar => check your identity => Driver License
@@ -79,7 +79,7 @@ namespace MovieShopMVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(UserRegisterRequestModel model)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) // safety check, prevent invalid input stored in database
             {
                 return View();
             }

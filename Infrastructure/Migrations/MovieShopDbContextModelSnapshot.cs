@@ -242,7 +242,7 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime>("PurchaseDateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("PurchaseNumber")
+                    b.Property<Guid?>("PurchaseNumber")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("TotalPrice")

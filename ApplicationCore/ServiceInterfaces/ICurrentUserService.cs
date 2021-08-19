@@ -8,7 +8,7 @@ namespace ApplicationCore.ServiceInterfaces
 {
     public interface ICurrentUserService
     {
-        public int UserId { get; set; }
+        int UserId { get; }
         bool IsAuthenticated { get; }
         string Email { get; }
         string FullName { get; }

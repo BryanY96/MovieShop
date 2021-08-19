@@ -10,6 +10,7 @@ namespace MovieShopMVC.Controllers
     {
         public IActionResult Index()
         {
+            
             return View();
         }
     }
