@@ -17,9 +17,14 @@ namespace Infrastructure.Repositories
 
         }
 
-        public async Task<Genre> GetMoviesByGenreId(int id)
+        public override async Task<Genre> GetByIdAsync(int id)
         {
-            return await _dbContext.Genres.Include(g => g.Movies).FirstOrDefaultAsync(g => g.Id == id);
+            var genre = await _dbContext.Genres.Include(g => g.Movies).FirstOrDefaultAsync(g => g.Id == id);
+            if (genre == null)
+            {
+                throw new Exception($"No genre found with {id}");
+            }
+            return genre;
         }
     }
 }

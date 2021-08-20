@@ -49,23 +49,47 @@ namespace Infrastructure.Services
             return genresModel;
         }
 
-        public async Task<IEnumerable<MovieCardResponseModel>> GetAllMovies(int id)
+        public async Task<GenreResponseModel> GetGenreDetails(int id)
         {
-            var genre = await _genreRepository.GetMoviesByGenreId(id);
-            var movieCards = new List<MovieCardResponseModel>();
+            var genre = await _genreRepository.GetByIdAsync(id);
+            var genreDetails = new GenreResponseModel()
+            {
+                Id = genre.Id,
+                Name = genre.Name
+            };
 
+            genreDetails.Movies = new List<MovieCardResponseModel>();
             foreach (var movie in genre.Movies)
             {
-                movieCards.Add(new MovieCardResponseModel
+                genreDetails.Movies.Add(new MovieCardResponseModel
                 {
                     Id = movie.Id,
                     Title = movie.Title,
-                    PosterUrl = movie.PosterUrl,
+                    PosterUrl = movie.PosterUrl
                 });
             }
 
-            return movieCards;
+            return genreDetails;
         }
+
+
+        //public async Task<IEnumerable<MovieCardResponseModel>> GetAllMovies(int id)
+        //{
+        //    var genre = await _genreRepository.GetMoviesByGenreId(id);
+        //    var movieCards = new List<MovieCardResponseModel>();
+
+        //    foreach (var movie in genre.Movies)
+        //    {
+        //        movieCards.Add(new MovieCardResponseModel
+        //        {
+        //            Id = movie.Id,
+        //            Title = movie.Title,
+        //            PosterUrl = movie.PosterUrl,
+        //        });
+        //    }
+
+        //    return movieCards;
+        //}
 
         //public async Task<Genre> GetGenreById
     }

@@ -1,0 +1,21 @@
+﻿@model ApplicationCore.Models.GenreResponseModel;
+
+
+@{
+    ViewData["Title"] = "GenreDetails Page";
+}
+
+<div class="rounded">
+    <div class="container-fluid bg-light">
+        <div class="row">
+
+            @foreach (var movie in Model.Movies)
+            {
+                <div class="col-6 col-lg-3 col-sm-4 col-xl-2">
+                    <!-- the first one (col-6) by default is for the smallest screen size-->
+                    @await Html.PartialAsync("_MovieCard", movie);
+                </div>
+            }
+        </div>
+    </div>
+</div>
