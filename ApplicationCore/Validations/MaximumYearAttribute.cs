@@ -14,8 +14,8 @@ namespace ApplicationCore.Validations
         {
             // the one we want the year to be max
             Year = year;
-
         }
+        
         protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
         {
             // object? value is the one user entered

@@ -23,9 +23,10 @@ namespace MovieShopMVC.Controllers
 
         public async Task<IActionResult> Index()
         {
-            
+            //throw new System.Exception("some error occured");
             var movieCards = await _movieService.GetTopRevenueMovies();
             return View(movieCards);
+
             // 2 ways to pass data from controller to view
             // 1 Strongly Typed Models
             // 2 ViewBag

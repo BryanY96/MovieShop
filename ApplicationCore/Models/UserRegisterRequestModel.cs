@@ -30,7 +30,7 @@ namespace ApplicationCore.Models
 
         [DataType(DataType.Date)]
         [Required(ErrorMessage = "Date of Birth cannot be empty")]
-        [MaximumYear(1900)]
+        [MaximumYear(1960)]
         // 1900 
         // create custom validation
         public DateTime DateOfBirth { get; set; }

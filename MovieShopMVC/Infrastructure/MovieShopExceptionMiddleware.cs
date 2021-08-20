@@ -49,9 +49,9 @@ namespace MovieShopMVC.Infrastructure
             // log the details of the exception
             // URL, Controller/Action, DateTime, StackTrace, Error Message, UserId (if user is authenticated), IP Address using SeriLog
             // Log the exception using SeriLog Text or JSON files...
-
             // Send email using MailKit to Dev Team
             // Display a friendly page to User
+
             // 200 OK, 201 Created, 400 Bad request
             // 401 UnAuthorized, 403 Forbidden, 404 Not Found, 500 Internal Server Error
             switch (ex)
@@ -59,7 +59,7 @@ namespace MovieShopMVC.Infrastructure
                 case ConflictException _:
                     httpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
                     break;
-                case DllNotFoundException _:
+                case NotFoundException _:
                     httpContext.Response.StatusCode = (int)HttpStatusCode.NotFound;
                     break;
                 default:
