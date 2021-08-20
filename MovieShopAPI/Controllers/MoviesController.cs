@@ -27,7 +27,7 @@ namespace MovieShopAPI.Controllers
             var movies = await _movieService.GetTopRevenueMovies();
             if (!movies.Any())
             {
-                return NotFound("No Movies Fount");
+                return NotFound("No Movies Found");
             }
             // 200 OK
             return Ok(movies);
@@ -35,7 +35,7 @@ namespace MovieShopAPI.Controllers
             // C# to JSON
             // C# to XML using XMLSerializer
             // DeSerialization => JSON to C#
-            // .NET Core 3.1 or less JSON.NET => 3rd party library, included
+            // .NET Core 3.1 or less => JSON.NET => 3rd party library, included
 
             // along with data you also need to return HTTP status code
         }
