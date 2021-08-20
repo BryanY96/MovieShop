@@ -203,3 +203,4 @@ F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\Movie
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\User\GetFavorites.cshtml.g.cs
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\User\GetProfile.cshtml.g.cs
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Genres\Index.cshtml.g.cs
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Shared\_GenreBar.cshtml.g.cs

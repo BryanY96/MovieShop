@@ -20,5 +20,10 @@ namespace MovieShopMVC.Controllers
             var genres = await _genreService.GetAllGenres();
             return View(genres);
         }
+
+        //public async Task<IActionResult> Details()
+        //{
+        //    var genre = await _genreService.
+        //}
     }
 }

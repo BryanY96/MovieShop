@@ -42,6 +42,7 @@ namespace MovieShopMVC
             services.AddScoped<ICurrentUserService, CurrentUserService>();
             services.AddScoped<IAsyncRepository<Genre>, EfRepository<Genre>>();
             services.AddScoped<IGenreService, GenreService>();
+            services.AddScoped<IGenreRepository, GenreRepository>();
             services.AddMemoryCache();
             
 
