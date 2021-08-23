@@ -12,9 +12,11 @@ namespace Infrastructure.Services
     public class MovieService : IMovieService
     {
         private readonly IMovieRepository _movieRepository;
-        public MovieService(IMovieRepository movieRepository)
+        private readonly IReviewRepository _reviewRepository;
+        public MovieService(IMovieRepository movieRepository, IReviewRepository reviewRepository)
         {
             _movieRepository = movieRepository;
+            _reviewRepository = reviewRepository;
         }
 
         public async Task<MovieDetailsResponseModel> GetMovieDetails(int id)
@@ -83,10 +85,68 @@ namespace Infrastructure.Services
             return movieCards; // we need to return models
         }
         // public getdetails() {}
+        public async Task<List<MovieCardResponseModel>> GetTopRatedMovies()
+        {
+            var movies = await _movieRepository.Get30TopRatedMovies();
+            var movieCards = new List<MovieCardResponseModel>();
+            foreach (var movie in movies)
+            {
+                movieCards.Add(new MovieCardResponseModel
+                {
+                    Id = movie.Id,
+                    Title = movie.Title,
+                    PosterUrl = movie.PosterUrl,
+                    Rating = movie.Rating
+                });
+            }
+            return movieCards;
+        }
 
-        //public async Task<List<MovieCardResponseModel>> GetAllMoives()
-        //{
+        public async Task<List<MovieCardResponseModel>> GetAllMovies()
+        {
+            var movies = await _movieRepository.ListAllAsync();
+            var movieList = new List<MovieCardResponseModel>();
 
-        //}
+            foreach (var movie in movies)
+            {
+                movieList.Add(new MovieCardResponseModel
+                {
+                    Id = movie.Id,
+                    Title = movie.Title,
+                    PosterUrl = movie.PosterUrl,
+                    Rating = movie.Rating
+                });
+            }
+            return movieList;
+        }
+
+        public async Task<MovieCardResponseModel> GetMovieById(int id)
+        {
+            var movie = await _movieRepository.GetByIdAsync(id);
+            var movieDetails = new MovieCardResponseModel()
+            {
+                Id = movie.Id,
+                Title = movie.Title,
+                PosterUrl = movie.PosterUrl,
+                Rating = movie.Rating
+            };
+            return movieDetails;
+        }
+        public async Task<List<ReviewResponseModel>> GetMovieReviews(int id)
+        {
+            var dbReviews = await _reviewRepository.ListAsync(r => r.MovieId == id);
+            var reviews = new List<ReviewResponseModel>();
+            foreach (var review in dbReviews)
+            {
+                reviews.Add(new ReviewResponseModel
+                {
+                    MovieId = review.MovieId,
+                    UserId = review.UserId,
+                    Rating = review.Rating,
+                    ReviewText = review.ReviewText
+                });
+            }
+            return reviews;
+        }
     }
 }

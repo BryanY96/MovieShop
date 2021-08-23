@@ -40,7 +40,7 @@ namespace Infrastructure.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Role> Roles { get; set; }
-
+        public DbSet<Purchase> Purchases { get; set; } 
 
         // For Fluent API:
         protected override void OnModelCreating(ModelBuilder modelBuilder)

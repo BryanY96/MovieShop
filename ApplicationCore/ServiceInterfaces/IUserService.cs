@@ -17,5 +17,6 @@ namespace ApplicationCore.ServiceInterfaces
         Task<IEnumerable<MovieCardResponseModel>> GetFavoriteMovies(int userId);
        
         Task<IEnumerable<UserResponseModel>> GetAllUsers();
+        Task<MovieCardResponseModel> BuyMovie(int movieId);
     }
 }

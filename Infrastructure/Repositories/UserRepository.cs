@@ -29,5 +29,11 @@ namespace Infrastructure.Repositories
         {
             return await _dbContext.Users.Include(u => u.Purchases).ThenInclude(u => u.Movie).FirstOrDefaultAsync(u => u.Id == id);
         }
+
+        public async Task<Movie> GetPurchasedMovieById(int movieId, int userId)
+        {
+            var purchase = await _dbContext.Purchases.Include(p => p.Movie).FirstOrDefaultAsync(p => p.MovieId == movieId && p.UserId == userId);
+            return purchase == null ? null : purchase.Movie;
+        }
     }
 }

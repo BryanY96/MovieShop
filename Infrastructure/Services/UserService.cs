@@ -17,9 +17,16 @@ namespace Infrastructure.Services
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
-        public UserService(IUserRepository userRepository)
+        private readonly ICurrentUserService _currentUserService;
+        private readonly IMovieRepository _movieRepository;
+        private readonly IPurchaseRepository _purchaseRepository;
+        public UserService(IUserRepository userRepository, ICurrentUserService currentUserService, 
+            IMovieRepository movieRepository, IPurchaseRepository purchaseRepository)
         {
             _userRepository = userRepository;
+            _currentUserService = currentUserService;
+            _movieRepository = movieRepository;
+            _purchaseRepository = purchaseRepository;
         }
 
         public async Task<IEnumerable<MovieCardResponseModel>> GetFavoriteMovies(int userId)
@@ -156,6 +163,31 @@ namespace Infrastructure.Services
                 });
             }
             return userList;
+        }
+
+        public async Task<MovieCardResponseModel> BuyMovie(int movieId)
+        {
+            var purchasedMovie = await _userRepository.GetPurchasedMovieById(movieId, _currentUserService.UserId);
+            if (purchasedMovie != null)
+            {
+                throw new ConflictException("You already bought this movie before");
+            }
+            var movie = await _movieRepository.GetByIdAsync(movieId);
+            var purchaseMovie = new Purchase
+            {
+                UserId = _currentUserService.UserId,
+                MovieId = movie.Id,
+                TotalPrice = movie.Price.GetValueOrDefault(),
+                PurchaseDateTime = DateTime.Now
+            };
+            var createdPurchase = await _purchaseRepository.AddAsync(purchaseMovie);
+            return new MovieCardResponseModel
+            {
+                Id = movie.Id,
+                Title = movie.Title,
+                PosterUrl = movie.PosterUrl
+            };
+
         }
         private string GenerateSalt()
         {

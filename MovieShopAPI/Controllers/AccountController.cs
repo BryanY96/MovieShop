@@ -90,7 +90,7 @@ namespace MovieShopAPI.Controllers
         public async Task<IActionResult> GetAllAccounts()
         {
             var users = await _userService.GetAllUsers();
-            if (users == null)
+            if (!users.Any())
             {
                 NotFound("No users exist");
             }

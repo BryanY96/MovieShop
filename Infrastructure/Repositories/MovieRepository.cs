@@ -29,11 +29,27 @@ namespace Infrastructure.Repositories
 
             return movies;
         }
-        //public override Task<IEnumerable<Movie>> ListAllAsync()
-        //{
-        //    var movies = await _dbContext.Movies.ToListAsync();
-        //}
-        
+        public async Task<IEnumerable<Movie>> Get30TopRatedMovies()
+        {
+            var movies = await _dbContext.Reviews.Include(r => r.Movie).GroupBy(m => new
+            {
+                Id = m.MovieId,
+                m.Movie.PosterUrl,
+                m.Movie.Title,
+                m.Movie.ReleaseDate
+            }).OrderByDescending(a => a.Average(r => r.Rating))
+            .Select(m => new Movie
+            {
+                Id = m.Key.Id,
+                PosterUrl = m.Key.PosterUrl,
+                Title = m.Key.Title,
+                ReleaseDate = m.Key.ReleaseDate,
+                Rating = m.Average(x => x.Rating)
+            }).Take(30)
+            .ToListAsync();
+            return movies;
+        }
+
 
         public override async Task<Movie> GetByIdAsync(int Id)
         {

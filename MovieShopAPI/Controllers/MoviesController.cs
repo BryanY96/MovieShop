@@ -15,9 +15,11 @@ namespace MovieShopAPI.Controllers
     public class MoviesController : ControllerBase
     {
         private readonly IMovieService _movieService;
-        public MoviesController(IMovieService movieService)
+        private readonly IGenreService _genreService;
+        public MoviesController(IMovieService movieService, IGenreService genreService)
         {
             _movieService = movieService;
+            _genreService = genreService;
         }
         // api/movies/toprevenue
         [Route("toprevenue")]
@@ -43,7 +45,61 @@ namespace MovieShopAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllMovies()
         {
-
+            var movies = await _movieService.GetAllMovies();
+            if (!movies.Any())
+            {
+                NotFound("No movies exist");
+            }
+            return Ok(movies);
         }
+
+        [HttpGet]
+        [Route("{id:int}")]
+        public async Task<IActionResult> GetMovieById(int id)
+        {
+            var movie = await _movieService.GetMovieById(id);
+            if (movie == null)
+            {
+                NotFound($"No movie found with id {id}");
+            }
+            return Ok(movie);
+        }
+
+        [HttpGet]
+        [Route("toprated")]
+        public async Task<IActionResult> GetTopRatedMovies()
+        {
+            var movies = await _movieService.GetTopRatedMovies();
+            if (!movies.Any())
+            {
+                NotFound("No movies exist");
+            }
+            return Ok(movies);
+        }
+        [HttpGet]
+        [Route("genre/{genreId:int}")]
+        public async Task<IActionResult> GetMoviesByGenre(int genreId)
+        {
+            var genreDetails = await _genreService.GetGenreDetails(genreId);
+            var movies = genreDetails.Movies;
+            if (!movies.Any())
+            {
+                NotFound($"No movies found with genreId: {genreId}");
+            }
+            return Ok(movies);
+        }
+
+        [HttpGet]
+        [Route("{id:int}/reviews")]
+        public async Task<IActionResult> GetMovieReviews(int id)
+        {
+            var reviews = await _movieService.GetMovieReviews(id);
+            if (!reviews.Any())
+            {
+                NotFound($"No reviews found for movieId: {id}");
+            }
+            return Ok(reviews);
+        }
+
     }
 }
