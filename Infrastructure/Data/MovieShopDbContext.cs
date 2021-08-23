@@ -41,6 +41,7 @@ namespace Infrastructure.Data
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Purchase> Purchases { get; set; } 
+        public DbSet<Favorite> Favorites { get; set; }
 
         // For Fluent API:
         protected override void OnModelCreating(ModelBuilder modelBuilder)

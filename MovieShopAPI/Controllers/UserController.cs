@@ -34,5 +34,13 @@ namespace MovieShopAPI.Controllers
             var movie = await _userService.BuyMovie(movieId);
             return Ok(movie);
         }
+
+        [HttpPost]
+        [Route("favorite")]
+        public async Task<IActionResult> Favorite([FromBody] int movieId)
+        {
+            var result = await _userService.AddToFavorite(movieId);
+            return Ok(result);
+        }
     }
 }

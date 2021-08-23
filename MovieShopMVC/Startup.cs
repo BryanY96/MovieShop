@@ -38,11 +38,15 @@ namespace MovieShopMVC
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ICastService, CastService>();
+            services.AddScoped<IFavoriteRepository, FavoriteRepository>();
+            services.AddScoped<IFavoriteService, FavoriteService>();
             services.AddScoped<ICastRepository, CastRepository>();
             services.AddScoped<ICurrentUserService, CurrentUserService>();
             services.AddScoped<IAsyncRepository<Genre>, EfRepository<Genre>>();
             services.AddScoped<IGenreService, GenreService>();
             services.AddScoped<IGenreRepository, GenreRepository>();
+            services.AddScoped<IReviewRepository, ReviewRepository>();
+            services.AddScoped<IPurchaseRepository, PurchaseRepository>();
             services.AddMemoryCache();
             
 

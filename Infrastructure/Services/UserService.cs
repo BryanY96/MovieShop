@@ -20,13 +20,15 @@ namespace Infrastructure.Services
         private readonly ICurrentUserService _currentUserService;
         private readonly IMovieRepository _movieRepository;
         private readonly IPurchaseRepository _purchaseRepository;
+        private readonly IFavoriteRepository _favoriteRepository;
         public UserService(IUserRepository userRepository, ICurrentUserService currentUserService, 
-            IMovieRepository movieRepository, IPurchaseRepository purchaseRepository)
+            IMovieRepository movieRepository, IPurchaseRepository purchaseRepository, IFavoriteRepository favoriteRepository)
         {
             _userRepository = userRepository;
             _currentUserService = currentUserService;
             _movieRepository = movieRepository;
             _purchaseRepository = purchaseRepository;
+            _favoriteRepository = favoriteRepository;
         }
 
         public async Task<IEnumerable<MovieCardResponseModel>> GetFavoriteMovies(int userId)
@@ -188,6 +190,21 @@ namespace Infrastructure.Services
                 PosterUrl = movie.PosterUrl
             };
 
+        }
+
+        public async Task<string> AddToFavorite(int movieId)
+        {
+            var dbFavorite = await _favoriteRepository.GetExistAsync(f => f.MovieId == movieId && f.UserId == _currentUserService.UserId);
+            if (dbFavorite != true)
+            {
+                return "Conflict";
+            }
+            await _favoriteRepository.AddAsync(new Favorite
+            {
+                UserId = _currentUserService.UserId,
+                MovieId = movieId
+            });
+            return "Added";
         }
         private string GenerateSalt()
         {
