@@ -7,6 +7,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Serilog;
+using Serilog.Sinks.File;
+using Microsoft.Extensions.Configuration;
+using Serilog.Formatting.Compact;
 
 namespace MovieShopMVC.Infrastructure
 {
@@ -68,6 +72,12 @@ namespace MovieShopMVC.Infrastructure
             }
             httpContext.Response.Redirect("/Home/Error");
 
+            //var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+            //var logger = new LoggerConfiguration().ReadFrom.Configuration(configuration).CreateLogger();
+            var log = new LoggerConfiguration()
+                .WriteTo.File("log.txt", outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}",
+                rollingInterval: RollingInterval.Hour).CreateLogger();
+            log.Information($"{ex}");
             await Task.CompletedTask;
         }
     }

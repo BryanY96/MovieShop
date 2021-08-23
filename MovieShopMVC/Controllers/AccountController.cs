@@ -39,8 +39,8 @@ namespace MovieShopMVC.Controllers
 
             if (user == null)
             {
-                return View();
-                //throw new Exception("Invalid Login");
+                //return View();
+                throw new Exception("Invalid Login");
             }
 
             // store some information in the Cookies, Authentication cookie.. Claims

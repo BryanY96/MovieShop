@@ -39,5 +39,11 @@ namespace MovieShopAPI.Controllers
 
             // along with data you also need to return HTTP status code
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllMovies()
+        {
+
+        }
     }
 }

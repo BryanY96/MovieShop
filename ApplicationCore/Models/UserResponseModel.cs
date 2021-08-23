@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Models
 {
-    public class UserLoginResponseModel
+    public class UserResponseModel
     {
         public int Id { get; set; }
         public string FirstName { get; set; }

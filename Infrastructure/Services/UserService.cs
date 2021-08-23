@@ -125,6 +125,38 @@ namespace Infrastructure.Services
             return userRegisterResponseModel;
         }
 
+        public async Task<UserResponseModel> GetUserById(int id)
+        {
+            var user = await _userRepository.GetByIdAsync(id);
+
+            var userResponseModel = new UserResponseModel()
+            {
+                Id = user.Id,
+                Email = user.Email,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                DateOfBirth = user.DateOfBirth
+            };
+            return userResponseModel;
+        }
+
+        public async Task<IEnumerable<UserResponseModel>> GetAllUsers()
+        {
+            var users = await _userRepository.ListAllAsync();
+            var userList = new List<UserResponseModel>();
+            foreach (var user in users)
+            {
+                userList.Add(new UserResponseModel
+                {
+                    Id = user.Id,
+                    Email = user.Email,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    DateOfBirth = user.DateOfBirth
+                });
+            }
+            return userList;
+        }
         private string GenerateSalt()
         {
             byte[] randomBytes = new byte[128 / 8];

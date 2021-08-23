@@ -83,5 +83,10 @@ namespace Infrastructure.Services
             return movieCards; // we need to return models
         }
         // public getdetails() {}
+
+        //public async Task<List<MovieCardResponseModel>> GetAllMoives()
+        //{
+
+        //}
     }
 }

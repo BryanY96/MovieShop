@@ -29,6 +29,11 @@ namespace Infrastructure.Repositories
 
             return movies;
         }
+        //public override Task<IEnumerable<Movie>> ListAllAsync()
+        //{
+        //    var movies = await _dbContext.Movies.ToListAsync();
+        //}
+        
 
         public override async Task<Movie> GetByIdAsync(int Id)
         {

@@ -205,3 +205,9 @@ F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\Movie
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Genres\Index.cshtml.g.cs
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Shared\_GenreBar.cshtml.g.cs
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\obj\Debug\net5.0\Razor\Views\Genres\Details.cshtml.g.cs
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\bin\Debug\net5.0\Serilog.dll
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\bin\Debug\net5.0\Serilog.Settings.Configuration.dll
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\bin\Debug\net5.0\Serilog.Sinks.File.dll
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\bin\Debug\net5.0\Microsoft.DotNet.InternalAbstractions.dll
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\bin\Debug\net5.0\Serilog.Formatting.Compact.dll
