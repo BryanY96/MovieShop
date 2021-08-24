@@ -211,3 +211,14 @@ F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\Movie
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\bin\Debug\net5.0\Serilog.Sinks.File.dll
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\bin\Debug\net5.0\Microsoft.DotNet.InternalAbstractions.dll
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\bin\Debug\net5.0\Serilog.Formatting.Compact.dll
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\bin\Debug\net5.0\MovieShopAPI.deps.json
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\bin\Debug\net5.0\MovieShopAPI.runtimeconfig.json
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\bin\Debug\net5.0\MovieShopAPI.runtimeconfig.dev.json
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\bin\Debug\net5.0\MovieShopAPI.exe
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\bin\Debug\net5.0\Microsoft.OpenApi.dll
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\bin\Debug\net5.0\MovieShopAPI.dll
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\bin\Debug\net5.0\MovieShopAPI.pdb
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopMVC\obj\Debug\net5.0\MovieShopMVC.MvcApplicationPartsAssemblyInfo.cs

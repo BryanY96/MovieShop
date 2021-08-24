@@ -10,7 +10,7 @@ namespace ApplicationCore.Models
     {
         public int MovieId { get; set; }
         public int UserId { get; set; }
-        public decimal? Rating { get; set; }
+        public decimal Rating { get; set; }
         public string ReviewText { get; set; }
     }
 }

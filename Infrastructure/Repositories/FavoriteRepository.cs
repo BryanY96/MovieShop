@@ -24,6 +24,11 @@ namespace Infrastructure.Repositories
             }
             return favorites;
         }
+        //public async Task<Movie> GetUnFavoritedMovieById(int movieId, int userId)
+        //{
+        //    var favorite = await _dbContext.Favorites.Include(f => f.Movie).FirstOrDefaultAsync(f => f.MovieId == movieId && f.UserId == userId);
+        //    return favorite == null ? null : favorite.Movie;
+        //}
 
     }
 }

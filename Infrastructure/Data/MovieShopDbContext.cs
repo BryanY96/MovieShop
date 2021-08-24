@@ -96,6 +96,7 @@ namespace Infrastructure.Data
             builder.HasKey(p => p.Id);
             builder.HasOne(p => p.Movie).WithMany(p => p.Purchases).HasForeignKey(p => p.MovieId);
             builder.HasOne(p => p.User).WithMany(p => p.Purchases).HasForeignKey(p => p.UserId);
+            builder.Property(p => p.PurchaseNumber);
             builder.Property(p => p.TotalPrice).HasColumnType("decimal(18, 2)");
         }
 

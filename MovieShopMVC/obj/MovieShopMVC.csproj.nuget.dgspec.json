@@ -130,6 +130,80 @@
         }
       }
     },
+    "F:\\Laptop_files\\My stuff\\求职\\Antra_FullStack_Training\\Project\\MovieShop\\MovieShopAPI\\MovieShopAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Laptop_files\\My stuff\\求职\\Antra_FullStack_Training\\Project\\MovieShop\\MovieShopAPI\\MovieShopAPI.csproj",
+        "projectName": "MovieShopAPI",
+        "projectPath": "F:\\Laptop_files\\My stuff\\求职\\Antra_FullStack_Training\\Project\\MovieShop\\MovieShopAPI\\MovieShopAPI.csproj",
+        "packagesPath": "C:\\Users\\mamba\\.nuget\\packages\\",
+        "outputPath": "F:\\Laptop_files\\My stuff\\求职\\Antra_FullStack_Training\\Project\\MovieShop\\MovieShopAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mamba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "F:\\Laptop_files\\My stuff\\求职\\Antra_FullStack_Training\\Project\\MovieShop\\ApplicationCore\\ApplicationCore.csproj": {
+                "projectPath": "F:\\Laptop_files\\My stuff\\求职\\Antra_FullStack_Training\\Project\\MovieShop\\ApplicationCore\\ApplicationCore.csproj"
+              },
+              "F:\\Laptop_files\\My stuff\\求职\\Antra_FullStack_Training\\Project\\MovieShop\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "F:\\Laptop_files\\My stuff\\求职\\Antra_FullStack_Training\\Project\\MovieShop\\Infrastructure\\Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "F:\\Laptop_files\\My stuff\\求职\\Antra_FullStack_Training\\Project\\MovieShop\\MovieShopMVC\\MovieShopMVC.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -159,6 +233,9 @@
               },
               "F:\\Laptop_files\\My stuff\\求职\\Antra_FullStack_Training\\Project\\MovieShop\\Infrastructure\\Infrastructure.csproj": {
                 "projectPath": "F:\\Laptop_files\\My stuff\\求职\\Antra_FullStack_Training\\Project\\MovieShop\\Infrastructure\\Infrastructure.csproj"
+              },
+              "F:\\Laptop_files\\My stuff\\求职\\Antra_FullStack_Training\\Project\\MovieShop\\MovieShopAPI\\MovieShopAPI.csproj": {
+                "projectPath": "F:\\Laptop_files\\My stuff\\求职\\Antra_FullStack_Training\\Project\\MovieShop\\MovieShopAPI\\MovieShopAPI.csproj"
               }
             }
           }

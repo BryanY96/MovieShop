@@ -21,7 +21,6 @@ namespace MovieShopMVC.Controllers
         }
 
         // user / GetALlPurchases
-        
         public async Task<IActionResult> GetAllPurchases()
         {
             var userId = _currentService.UserId;

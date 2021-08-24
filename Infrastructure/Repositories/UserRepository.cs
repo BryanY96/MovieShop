@@ -14,8 +14,8 @@ namespace Infrastructure.Repositories
     {
         public UserRepository(MovieShopDbContext dbContext) : base(dbContext)
         {
-
         }
+
         public async Task<User> GetUserByEmail(string email)
         {
             var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == email);
@@ -35,5 +35,12 @@ namespace Infrastructure.Repositories
             var purchase = await _dbContext.Purchases.Include(p => p.Movie).FirstOrDefaultAsync(p => p.MovieId == movieId && p.UserId == userId);
             return purchase == null ? null : purchase.Movie;
         }
+
+        public async Task<Movie> GetFavoritedMovieById(int movieId, int userId)
+        {
+            var favorite = await _dbContext.Favorites.Include(f => f.Movie).FirstOrDefaultAsync(f => f.MovieId == movieId && f.UserId == userId);
+            return favorite == null ? null : favorite.Movie;
+        }
+        
     }
 }

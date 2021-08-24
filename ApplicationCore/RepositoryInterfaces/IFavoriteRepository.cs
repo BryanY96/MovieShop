@@ -10,5 +10,6 @@ namespace ApplicationCore.RepositoryInterfaces
     public interface IFavoriteRepository : IAsyncRepository<Favorite>
     {
         Task<List<Favorite>> GetAllFavorites(int id);
+        //Task<Movie> GetUnFavoritedMovieById(int movieId, int userId);
     }
 }

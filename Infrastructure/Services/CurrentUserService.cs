@@ -19,7 +19,7 @@ namespace Infrastructure.Services
 
         public int UserId => Convert.ToInt32(_httpContextAccessor.HttpContext?.User?.FindFirst(type: ClaimTypes.NameIdentifier)?.Value);
 
-        public bool IsAuthenticated => throw new NotImplementedException();
+        public bool IsAuthenticated => _httpContextAccessor.HttpContext.User.Identity.IsAuthenticated;
 
         public string Email => _httpContextAccessor.HttpContext?.User?.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
 

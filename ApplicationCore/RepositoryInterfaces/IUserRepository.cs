@@ -13,5 +13,7 @@ namespace ApplicationCore.RepositoryInterfaces
         Task<User> GetUserPurchasedById(int id);
         Task<User> GetUserFavoriteById(int id);
         Task<Movie> GetPurchasedMovieById(int movieId, int userId);
+        Task<Movie> GetFavoritedMovieById(int movieId, int userId);
+        
     }
 }
