@@ -19,6 +19,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.Text;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MovieShopAPI
 {
@@ -50,6 +54,7 @@ namespace MovieShopAPI
             services.AddScoped<IGenreRepository, GenreRepository>();
             services.AddScoped<IReviewRepository, ReviewRepository>();
             services.AddScoped<IPurchaseRepository, PurchaseRepository>();
+            services.AddScoped<IAdminService, AdminService>();
             //services.AddScoped<IReviewService, ReviewService>();
             services.AddMemoryCache();
 
@@ -63,13 +68,25 @@ namespace MovieShopAPI
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MovieShopAPI", Version = "v1" });
             });
 
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie(options =>
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
                 {
-                    options.Cookie.Name = "MovieShopAuthCookie";
-                    options.ExpireTimeSpan = TimeSpan.FromHours(2); // last for 2 hours from the moment cookies are generated
-                    options.LoginPath = "/Account/Login";
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateAudience = false,
+                        ValidateIssuer = false,
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey =
+                            new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtSecretKey"]))
+
+                    };
                 });
+            services.AddAuthorization(options =>
+            {
+                var defaultAuthorizationPolicyBuilder = new AuthorizationPolicyBuilder(JwtBearerDefaults.AuthenticationScheme);
+                defaultAuthorizationPolicyBuilder = defaultAuthorizationPolicyBuilder.RequireAuthenticatedUser();
+                options.DefaultPolicy = defaultAuthorizationPolicyBuilder.Build();
+            });
 
             services.AddHttpContextAccessor();
         }
@@ -85,6 +102,11 @@ namespace MovieShopAPI
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors(builder =>
+            {
+                builder.WithOrigins(Configuration.GetValue<string>(key: "clientSPAUrl")).AllowAnyHeader().AllowAnyMethod().AllowCredentials();
+            });
 
             app.UseRouting();
 

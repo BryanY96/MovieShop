@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { MovieDetailsComponent } from './movies/movie-details/movie-details.comp
 import { FavoritesComponent } from './user/favorites/favorites.component';
 import { PurchasesComponent } from './user/purchases/purchases.component';
 import { EditprofileComponent } from './user/editprofile/editprofile.component';
+import { MovieCardComponent } from './shared/components/movie-card/movie-card.component';
 
 @NgModule({
   declarations: [
@@ -30,11 +32,13 @@ import { EditprofileComponent } from './user/editprofile/editprofile.component';
     MovieDetailsComponent,
     FavoritesComponent,
     PurchasesComponent,
-    EditprofileComponent
+    EditprofileComponent,
+    MovieCardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -22,7 +22,6 @@ F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\Movie
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopAPI\bin\Debug\net5.0\Microsoft.OpenApi.dll
-F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopAPI\bin\Debug\net5.0\Newtonsoft.Json.dll
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -63,3 +62,4 @@ F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\Movie
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopAPI\obj\Debug\net5.0\ref\MovieShopAPI.dll
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopAPI\obj\Debug\net5.0\MovieShopAPI.pdb
 F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopAPI\obj\Debug\net5.0\MovieShopAPI.genruntimeconfig.cache
+F:\Laptop_files\My stuff\求职\Antra_FullStack_Training\Project\MovieShop\MovieShopAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

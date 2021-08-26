@@ -1,5 +1,6 @@
 ﻿using ApplicationCore.Models;
 using ApplicationCore.ServiceInterfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -79,6 +80,19 @@ namespace MovieShopAPI.Controllers
             var favoriteExists = await _userService.IsFavoriteExists(id, movieId);
             return Ok(new { isFavorited = favoriteExists });
         }
+
+        //[HttpGet]
+        //[Route("{id:int}/purchases")]
+        //public async Task<IActionResult> GetAllPurchases(int id)
+        //{
+        //    var movies = await _userService.GetPuchasedMovies(id);
+        //    if (!movies.Any())
+        //    {
+        //        NotFound("No purchased movies found");
+        //    }
+        //    return Ok(movies);
+        //}
+        [Authorize]
         [HttpGet]
         [Route("{id:int}/purchases")]
         public async Task<IActionResult> GetAllPurchases(int id)
@@ -90,6 +104,8 @@ namespace MovieShopAPI.Controllers
             }
             return Ok(movies);
         }
+
+
         [HttpGet]
         [Route("{id:int}/favorites")]
         public async Task<IActionResult> GetAllFavorites(int id)
@@ -161,5 +177,7 @@ namespace MovieShopAPI.Controllers
             }
             return Ok(reviews);
         }
+
+
     }
 }
