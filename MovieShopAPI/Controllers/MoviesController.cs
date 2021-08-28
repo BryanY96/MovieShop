@@ -57,7 +57,7 @@ namespace MovieShopAPI.Controllers
         [Route("{id:int}")]
         public async Task<IActionResult> GetMovieById(int id)
         {
-            var movie = await _movieService.GetMovieById(id);
+            var movie = await _movieService.GetMovieDetails(id);
             if (movie == null)
             {
                 NotFound($"No movie found with id {id}");

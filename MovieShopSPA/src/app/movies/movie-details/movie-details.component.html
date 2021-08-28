@@ -1,1 +1,89 @@
 <p>movie-details works!</p>
+
+
+<div class="bg-image" style="background-image:url({{movies.backdropUrl}}); align-content:center; background-size:120%">
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.8);">
+        <div class="row container-fluid">
+            <div class="col-md-3 offset-2">
+                <div>
+                    <img src={{movies.posterUrl}} class="card-img-top" alt={{movies.title}} />
+                </div>
+            </div>
+
+            <div class="col-md-4 text-left">
+                <div>
+                    <h1 style="color:white">{{movies.title}}</h1>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p style="color:grey">
+                            {{movies.tagline}}
+                        </p>
+                        <p style="color:grey">
+                            <b>{{movies.runTime}} m | {{movies.releaseDate | date: 'y'}}</b>
+                        </p>
+                    </div>
+                    <div class="col" >
+                        <a href="#" *ngFor="let genre of movies.genres" class="badge badge-pill badge-secondary mr-1">
+                            {{genre.name}}
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <span class="badge" [ngClass] = "{
+                            'badge-success': movies.rating > 8,
+                            'badge-primary': movies.rating > 7 && movies.rating < 8,
+                            'badge-warning': movies.rating > 6 && movies.rating < 7,
+                            'badge-danger': movies.rating < 6
+                        }">{{movies.rating | number: '1.0-2'}}
+                    </span>
+                </div>
+                <div>
+                    <p style="color:white">
+                        {{movies.overview}}
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-3 mt-4">
+                <hr />
+                <button type="button" class="btn btn-outline-primary container-fluid bg-transparent">REVIEW</button>
+                <hr />
+                <button type="button" class="btn btn-outline-primary container-fluid bg-transparent">TRAILER</button>
+                <hr />
+                <button class="btn btn-light container-fluid mb-1" type="submit">BUY {{movies.price}}</button>
+                <button class="btn btn-light container-fluid mt-1" type="submit">WATCH MOVIE</button>
+                <hr />
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-5">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">MOVIE FACTS</li>
+            <li class="list-group-item">Release Date <span
+                    class="badge badge-pill badge-dark">{{movies.releaseDate | date: 'shortDate'}}</span> </li>
+            <li class="list-group-item">Run Time <span class="badge badge-pill badge-dark">{{movies.runTime}} m</span> </li>
+            <li class="list-group-item">Box Office <span class="badge badge-pill badge-dark">$ {{movies.revenue}}</span>
+            </li>
+            <li class="list-group-item">Budget <span class="badge badge-pill badge-dark">$ {{movies.budget}}</span> </li>
+        </ul>
+    </div>
+
+    <div class="col-4">
+        <ul class="col list-group list-group-flush">
+
+            <li class="list-group-item"> <b>CAST</b> </li>
+            
+            <li class="list-group-item" *ngFor="let cast of movies.casts">
+                <a href="#"><img src={{cast.profilePath}} class="rounded-circle" style="max-width:10%" alt={{cast.name}} /></a>
+                {{cast.name}}
+                {{cast.character}}
+            </li>
+        </ul>
+
+    </div>
+</div>

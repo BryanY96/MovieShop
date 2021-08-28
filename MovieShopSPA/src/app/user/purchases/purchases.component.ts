@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/core/services/user.service';
 import { MovieCard } from 'src/app/shared/models/movieCard';
 
@@ -9,16 +10,20 @@ import { MovieCard } from 'src/app/shared/models/movieCard';
 })
 export class PurchasesComponent implements OnInit {
   movies !: MovieCard[];
-
-  constructor(private userservice: UserService) { }
+  id !: number;
+  constructor(private userservice: UserService, private currentRouter: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.userservice.getUserPurchases(49821).subscribe(
+    this.currentRouter.params.subscribe(
+      p => {
+        this.id = p['id'];
+      });
+    console.log(this.id);
+    this.userservice.getUserPurchases(this.id).subscribe(
       u => {
         this.movies = u;
         console.table(this.movies);
       }
     )
   }
-
 }

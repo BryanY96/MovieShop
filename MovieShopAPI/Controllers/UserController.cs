@@ -92,7 +92,7 @@ namespace MovieShopAPI.Controllers
         //    }
         //    return Ok(movies);
         //}
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         [Route("{id:int}/purchases")]
         public async Task<IActionResult> GetAllPurchases(int id)
@@ -105,7 +105,7 @@ namespace MovieShopAPI.Controllers
             return Ok(movies);
         }
 
-
+        [Authorize]
         [HttpGet]
         [Route("{id:int}/favorites")]
         public async Task<IActionResult> GetAllFavorites(int id)
